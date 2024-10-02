@@ -1,0 +1,16 @@
+﻿using System.Text.Json.Serialization;
+
+namespace Biblioteca.Models
+{
+    public class Autor
+    {
+        public int Id { get; set; }
+
+        public string Nome { get; set; }
+
+        public string Sobrenome { get; set; }
+
+        [JsonIgnore]
+        public ICollection<Livro> Livros { get; set; }
+    }
+}
