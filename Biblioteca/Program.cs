@@ -1,5 +1,5 @@
 using Biblioteca.Data;
-using Biblioteca.Services;
+using Biblioteca.Services.Autores;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 //injeção de dependencia
-builder.Services.AddScoped<IAutorInterface, AutorService>();
+builder.Services.AddScoped<IAutorService, AutorService>();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
