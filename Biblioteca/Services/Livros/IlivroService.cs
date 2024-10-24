@@ -1,6 +1,7 @@
 ﻿namespace Biblioteca.Services.Livros
 {
-    public interface IlivroService
+    public interface ILivroService
     {
+
     }
 }
