@@ -41,12 +41,13 @@ namespace Biblioteca.Controllers
         }
 
         [HttpPut("editar-autor")]
-        public async Task<ActionResult<ResponseModel<Autor>>> EditarAutor(AutorCriacaoDto autorCriacaoDto)
+        public async Task<ActionResult<ResponseModel<List<Autor>>>> EditarAutor(AutorCriacaoDto autorCriacaoDto)
         {
-            return Ok(await _autorInterface.EditarAutor(autorCriacaoDto));
+            var autores = await _autorInterface.EditarAutor(autorCriacaoDto);
+            return Ok(autores);
         }
 
-        [HttpDelete("editar-autor/{id}")]
+        [HttpDelete("remover-autor/{id}")]
         public async Task<ActionResult<ResponseModel<Autor>>> ExcluirAutor(int id)
         {
             return Ok(await _autorInterface.ExcluirAutor(id));

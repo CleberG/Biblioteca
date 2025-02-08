@@ -16,17 +16,10 @@ namespace Biblioteca.Models
             Titulo = titulo;
         }
 
-        public void AddAutor(AutorCriacaoDto autor)
+        public void AddAutor(Autor autor)
         {
-            if(string.IsNullOrWhiteSpace(autor.Nome) && string.IsNullOrWhiteSpace(autor.Sobrenome))
-            {
-                Autor = new Autor()
-                {
-                    Nome = autor.Nome,
-                    Sobrenome = autor.Sobrenome
-                };
-            }
-            
+            if (autor.Id > 0)
+                
         }
     }
 }
